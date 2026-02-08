@@ -1,0 +1,5 @@
+pip install -r requirements.txt
+pip install Django>5.3,<5.3
+django-admin startproject mysite 
+django-admin startproject mysite .
+python manage.py runserver
