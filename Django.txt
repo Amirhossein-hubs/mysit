@@ -134,3 +134,53 @@ MEDIA_URL:ادرس پایه برای فایل های اپلودی از طریق 
 
 
 python manage.py:میتوان دسترسی داشت manage.pyبه دستورات دیگر 
+
+
+بارگیری قالب سایت ها
+دستور زیر به همراه ادرس سایت قالب سایت مورد نظر را بارگیری میکند
+shift + کلیک راست
+./wget.exe -r 
+
+
+
+
+Alt + shift + f == منظم کردن کد
+
+
+برابر با STATIC و MEDIA محل اضافه کردن آدرس های url در طول پروژه در بخش ==== urlpatterns
+
+
+
+##template tag                  {%  %}
+عملکردی را مثل یک تابع برای کاری انجام می‌دهد
+
+Display Logic. E.g., {% if %}...{% endif %}
+Loop Control. E.g., {% for x in y %}...{% endfor %}
+Block Declaration. E.g., {% block content %}...{% endblock %}
+Content Import. E.g., {% include "header.html" %}
+Inheritance. E.g., {% extends "base.html" %}
+
+
+
+##template variable             {{  }}
+این متغیرها در زمان اجرای صفحات می‌توانند به آن ارجاع داده شده و المان‌هایی را به نمایش بگذارند که به‌صورت داینامیک در صفحه قرار می‌گیرند.
+Simple Variables. E.g., {{ title }}
+Object Attributes. E.g., {{ page.title }}
+Dictionary Lookups. E.g., {{ dict.key }}
+List Indexes. E.g., {{ list_items.0 }}
+Method Calls. E.g., {{ var.upper }}, {{ mydict.pop }}
+
+
+
+## filter   |
+شما با استفاده از | فیلتر را به یک متغیر اعمال می‌کنید
+Change Case. E.g., {{ name|title }} or {{ units|lower }}
+Truncation. E.g., {{ post_content|truncatewords:50 }}
+Date Formatting. E.g., {{ order_date|date:"D M Y" }}
+List Slicing. E.g., {{ list_items|slice:":3" }}
+Default Values. E.g., {{ item_total|default:"nil" }}
+
+
+
+static:یعنی ثابت و بدون تغییر در زمان اجرا.
+dynamic:یعنی محتوای متغیر که هنگام درخواست کاربر ساخته می‌شود.
