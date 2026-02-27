@@ -13,8 +13,7 @@ def element_view(request):
 def website(request):
     return render(request, 'website/index.html')
 
-def test_view(request):
-    return render(request, 'website/test.html')
+
 
 
     

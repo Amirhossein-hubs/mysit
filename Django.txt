@@ -200,3 +200,87 @@ Extends:برای ارث‌بری کامل از یک قالب مادر استفا
 
 include:برای درج یک بخش کوچک یا تکراری از قالب در صفحه دیگر است
 
+#api
+راهی‌ست برای ارتباط بین نرم‌افزارها. با استفاده از آن، یک برنامه می‌تواند از قابلیت‌های برنامه‌ی دیگر بدون دانستن جزئیات داخلی‌اش استفاده کند.
+
+#crud
+#چهار عمل اصلی api
+create
+retrieve
+update
+delet
+
+
+
+#Makemigrations: کارهایی که میخوام انجام بشه و تاالان انجام نشده رو بهش میدم
+#migrate: اون کارهای تایین شده رو نجام بده
+
+پوشه Migrations : محل نگهداری تغییرات Model مربوط به هر اپلیکیشن است.
+migration: نهایی کردن تغییرات مبتنی بر کوعری های ایجاد شده در پوشه و ایجاد دیتابیس
+دستور makemigrations : ساخت اولیه و آماده‌سازی query های لازم برای ایجاد تغییرات دیتا بیس
+
+sqlite: جنگو به صورت پیش فرض از این دیتابیس استفاده میکنه
+
+orm: فقط یک روش  برای ساخت و دستکاری پایگاه داده با محوریت زبان پایتون است که بدون نیاز به تغییر نوع کوعری ها با یک زبان با پایگاه داده ها متفاوت ارتباط برقرار نمایید.
+orm:یک پل ارتباطیه
+
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser = ایجا
+
+# fild option
+#models.DateTimeField(auto_now_add=True)
+#auto_now_add = برای زمانی که آبجکت ایجاد می‌شود استفاده می‌شود
+
+#models.DateTimeField(auto_now=True)
+#auto_now = رای ذخیره‌سازی زمان ایجاد تغییرات
+
+function table models __str__ =  یک فرم نمایشی منطقی متنی را به جای آدرس و شماره ابجکت نمایش مید
+
+# shell django
+python manage.py shell:بازکردن شل جنگو
+p = Post()
+p.title = 'test title'
+p.content = 'this is a content'
+p.status = True
+p.save()
+
+p.delete()
+Post.objects.all()
+Post.objects.all().delete()
+Post.objects.filter(status=True)
+Post.objects.filter(status=False)
+Post.objects.all()[0]
+Post.objects.get(id=1) # get the object which has id equal to 1
+
+import os
+os.system('cls')
+
+
+#create
+from mysite.models import Post
+p = Post()
+p.title = “title”
+p.content = “contents of the post”
+p.save()
+
+
+#update
+p = Post.objects.get(id=1)
+p.title = “change”
+p.save()
+
+
+#object.all()
+Post.objects.all() # all objects in post table
+Post.objects.filter(status=1) # all objects which has status equal to 1 or True
+Post.objects.get(id=1) # get the object which has id equal to 1
+
+
+#delet
+p = Post.objects.get(id=1)
+p.delete()
+
+
+
