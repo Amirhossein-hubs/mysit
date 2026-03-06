@@ -227,7 +227,8 @@ orm:یک پل ارتباطیه
 
 python manage.py makemigrations
 python manage.py migrate
-python manage.py createsuperuser = ایجا
+python manage.py createsuperuser 
+دستور createsuperuser : برای ساخت یک یوزر اولیه با دسترسی Super
 
 # fild option
 #models.DateTimeField(auto_now_add=True)
@@ -279,8 +280,28 @@ Post.objects.get(id=1) # get the object which has id equal to 1
 
 
 #delet
+p = Post.objects.all()
 p = Post.objects.get(id=1)
+p = Post.objects.get(id=pid)
+p = post.objects.filter(status=True)
 p.delete()
 
 
 
+## django admin  customization
+
+
+
+نکته: برای استفاده از url فارسی در جنگو باید در مدل‌هاتون آپشن allow_unicode  در فیلد SlugField را برابر با True قرار دهید تا قابلیت پردازش پیدا کند در غیر این صورت تنها انگلیسی و کاراکترهای مبتنی بر آن را خواهد شناخت.
+
+
+{% url ‘blog:single’ pid=post.id  %}
+/blog/post-{{item.id}}
+path('<int:pid>' ,blog_single,name='single')
+{% url ‘blog:single’ parameter1=object1   parameter2=object2   … %}
+
+
+M نمایان‌گر ماه کوتاه‌شده است (مثلاً Jan، Feb، Mar و …).
+D نمایان‌گر روز هفته به‌صورت کوتاه‌شده است (Fri، Mon، Tue و …).
+
+در فیلتر date، قالب "M D" به‌صورت زیر نمایش داده می‌شود:

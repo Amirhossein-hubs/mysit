@@ -1,3 +1,10 @@
 from django.contrib import admin
+from website.models import Contact
 
-# Register your models here.
+class ContactAdmin(admin.ModelAdmin):
+    date_hierarchy = 'created_data'
+    list_display = ('name', 'email', 'created_data')
+    list_filter = ('email',)
+    search_fields = ('name', 'massage')
+    
+admin.site.register(Contact, ContactAdmin)
