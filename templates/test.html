@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p>{{posts.title}}</p>
-    <p>{{posts.content}}</p>
-    <p>{{posts.counted_views}}</p>
+    <form action="{% url 'website:test' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">submit</button>
+    </form>
 </body>
 </html>
