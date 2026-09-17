@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- start banner Area -->
+<section class="relative about-banner">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					<p>login</p>
+				</h1>
+            </div>
+		</div>
+	</div>
+</section><br><br><br>
+<!-- End banner Area -->
+<body class="text-center">
+    <form class="form-signin" method="post" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+        <img class="mb-4" src="{% static 'img/bootstrap.jpg' %}" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">please sign in</h1>
+        <label for="inputusername" class="sr-only">Username</label>
+        <input name="username" type="text" class="form-control" placeholder="Username" required autofocus><br>
+        <lable for="inputpassword" class="sr-only">Password</lable>
+        <input name="password" type="password" class="form-control" placeholder="Password" required><br>
+        <lable for="inputEmail" class="sr-only">Email</lable>
+        <input name="email" type="email" class="form-control" placeholder="Email" required><br>
+        <div class="checkboxmb-3">
+            <lable>
+                <input type="checkbox" value="remember-me">Remember me
+            </lable>
+        </div><br>
+        <p><a href="{% url 'accounts:singup' %}">SINGUP</a></p>
+        <button class="btn btn-lg btn-primary btn-blook" type="submit">sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+</body>
+{% endblock %}

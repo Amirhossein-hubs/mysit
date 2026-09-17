@@ -2,6 +2,7 @@ pip install -r requirements.txt
 pip install Django>5.3,<5.3
 django-admin startproject mysite 
 django-admin startproject mysite .
+python manage.py createsuperuser
 python manage.py runserver
 
 #fill project
@@ -72,7 +73,6 @@ client error responses      خطای کلاینت
 server error responses      خطای سرور
 این کدها نشان‌دهنده مشکلاتی هستند که در سرور اتفاق افتاده و باعث شده‌اند که درخواست به درستی پردازش نشود.
 مشکلات سمت سرور را نمایش میدهد
-
 
 
 
@@ -302,7 +302,8 @@ p.delete()
 
 from django.core.paginator import Paginator
 has_next = گرفتن تشخیص وجود پست بعدی
-end_index = گرفتن تشخیص وجود پست قبلی
+has_previous = برای تشخیص وجود پست قبلی
+end_index = برای گرفتن ایندکس اخر
 page_range = یک دنباله ازاعداد صفحات را به شما باز می گرداند
 start_index = برای گرفتن ایندکس صفحه اول استفاده می‌شود
 
@@ -380,6 +381,11 @@ CSRF ==                 ?????????????????????????????????????????
 1.مشکل pop up message practice 3 مشکل کتابخونه
 2.مشکل کتابخونه Django-summernote
 3.مشکل راست به چپ در نمایش تایتل و کانتنت درپوست ها روی صفحه اصلی 
+4.disqus = سیستم کامنتینگ که نیاز به اینترنت ملی یا حتی فیلتر 
+5.درست کردم سرچت تمام صفحات 
+6.درست کردن نظم صفحه اچتی ام ال در صفحه سینگل
+7.درست کردن کد html login == به خاطر نت ملی
+8.درست کردن content در ادمین
 
 
 blank=True: این پارامتر به اعتبارسنجی فرم (form validation) اجازه می‌دهد که این فیلد خالی باشد
@@ -426,3 +432,14 @@ Django debugger را می‌توان در production  استفاده کرد؟
 این ماژول برنامه ای است که به شما اجازه می دهد تا امنیت سایت خود را هنگام ورود اطلاعات در فرم‌ها در سایت تامین کنید
 
 
+# احراز هویت کاربر
+request = در ویو تشخیص ورود کاربر از طریق ریکوعست بررسی میشود
+
+Authentication = ماژول کنترل ارتباطات احراز هویت در دیجنگو
+
+Is_authenticated = برای تشخیص ورود کاربر به تمپلیت
+
+Authenticate = تابع مربوط به اهراز هویت در ویو ها پس از دریافت اسم و پسورد
+
+
+Login_required = دکوراتور مربوط به استعلام ورود کاربر قبل از اجرای  ویو  در ماژول  Auth

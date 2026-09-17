@@ -9,9 +9,10 @@ class Contact_form(forms.ModelForm):
         fields = '__all__'
         
 
-class newslatter_form(forms.ModelForm):
+class Newslatter_form(forms.ModelForm):
 
     class Meta:
         model = newslatters
         fields = '__all__'
+
 

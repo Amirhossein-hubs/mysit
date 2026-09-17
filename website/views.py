@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from blog.models import Post
 from website.models import Contact
-from website.forms import Contact_form, newslatter_form
+from website.forms import Contact_form, Newslatter_form
 
 
 def about_view(request):
@@ -29,7 +29,7 @@ def contact_view(request):
 
 def newslatter_views(request):
     if request.method == 'POST':
-        form = newslatter_form(request.POST)
+        form = Newslatter_form(request.POST)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'your ticket submited successfully')
